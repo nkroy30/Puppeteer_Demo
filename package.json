@@ -1,0 +1,38 @@
+{
+  "name": "jest_htmlcompare_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "clear-jest-cache": "npx jest --clearCache",
+    "test": "npx jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "preset": "jest-puppeteer",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "pageTitle": "Puppeteer Report",
+          "publicPath": "./reports",
+          "filename": "HTML_report.html",
+          "expand": false
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/jest-environment-puppeteer": "^4.3.1",
+    "jest": "^25.4.0",
+    "jest-html-reporters": "^1.2.1",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^3.0.0"
+  }
+}
